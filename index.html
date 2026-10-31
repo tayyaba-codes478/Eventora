@@ -1,0 +1,296 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Discover exciting events, explore experiences and book your tickets with Eventora.">
+  <title>Eventora | Discover Your Next Experience</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="topbar">
+    <p>✨ Discover experiences. Create memories. Make every moment count.</p>
+  </div>
+
+  <header class="navbar">
+    <a href="#" class="logo"><span class="logo-icon">✦</span> eventora<span class="logo-dot">.</span></a>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">☰</button>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="#home" class="active">Home</a>
+      <a href="#events">Explore Events</a>
+      <a href="#categories">Categories</a>
+      <a href="#bookings">My Bookings</a>
+    </nav>
+
+    <a href="#events" class="nav-btn">Explore Events <span>↗</span></a>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <span class="eyebrow"><span class="eyebrow-dot"></span> YOUR NEXT EXPERIENCE STARTS HERE</span>
+
+        <h1>Find your next<br> <span>favorite moment.</span></h1>
+
+        <p>From live music to creative workshops, discover amazing events happening around you and make memories worth keeping.</p>
+
+        <div class="hero-actions">
+          <a href="#events" class="primary-btn">Explore Events <span>→</span></a>
+          <a href="#categories" class="secondary-btn">Browse Categories</a>
+        </div>
+
+        <div class="hero-trust">
+          <div class="avatar-stack">
+            <span>🎨</span>
+            <span>🎵</span>
+            <span>💻</span>
+          </div>
+          <div>
+            <strong>Something for everyone</strong>
+            <small>Discover experiences you love</small>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="hero-main-image">
+          <img src="https://images.unsplash.com/photo-1501386761578-eac5c94b800a?w=1000" alt="Live music event">
+          <div class="image-overlay"></div>
+          <div class="hero-image-caption">
+            <span>FEATURED EXPERIENCE</span>
+            <h3>Feel the Music Festival</h3>
+            <p>📍 Lahore, Pakistan</p>
+          </div>
+        </div>
+
+        <div class="floating-note note-top">
+          <span class="note-icon">🎟️</span>
+          <div><strong>Great experiences</strong><small>All in one place</small></div>
+        </div>
+
+        <div class="floating-note note-bottom">
+          <span class="note-icon blue">✦</span>
+          <div><strong>Find your vibe</strong><small>Explore something new</small></div>
+        </div>
+        <div class="hero-decoration"></div>
+      </div>
+    </section>
+
+    <!-- CATEGORIES -->
+    <section class="categories-section" id="categories">
+      <div class="section-heading">
+        <div>
+          <span class="section-label">EXPLORE BY INTEREST</span>
+          <h2>What's your <span>vibe?</span></h2>
+        </div>
+        <p>Find events that match your interests.</p>
+      </div>
+
+      <div class="category-grid">
+        <button class="category-card" data-category="Music">
+          <span class="category-emoji music">🎵</span>
+          <strong>Music</strong><small>Live shows & concerts</small>
+        </button>
+        <button class="category-card" data-category="Tech">
+          <span class="category-emoji tech">💻</span>
+          <strong>Tech</strong><small>Ideas & innovation</small>
+        </button>
+        <button class="category-card" data-category="Art">
+          <span class="category-emoji art">🎨</span>
+          <strong>Art & Culture</strong><small>Creative experiences</small>
+        </button>
+        <button class="category-card" data-category="Workshops">
+          <span class="category-emoji workshop">🧠</span>
+          <strong>Workshops</strong><small>Learn something new</small>
+        </button>
+        <button class="category-card" data-category="Food">
+          <span class="category-emoji food">🍕</span>
+          <strong>Food</strong><small>Food & festivals</small>
+        </button>
+        <button class="category-card" data-category="Sports">
+          <span class="category-emoji sports">⚽</span>
+          <strong>Sports</strong><small>Games & activities</small>
+        </button>
+      </div>
+    </section>
+
+    <!-- EVENTS -->
+    <section class="events-section" id="events">
+      <div class="section-heading events-heading">
+        <div>
+          <span class="section-label">HANDPICKED FOR YOU</span>
+          <h2>Upcoming <span>events.</span></h2>
+          <p>Explore what's happening next. Your next great experience is waiting.</p>
+        </div>
+        <div class="event-search">
+          <span>⌕</span>
+          <input type="search" id="searchInput" placeholder="Search events...">
+        </div>
+      </div>
+
+      <div class="filter-row">
+        <div class="filter-buttons" id="filterButtons">
+          <button class="filter-btn active" data-filter="All">All Events</button>
+          <button class="filter-btn" data-filter="Music">Music</button>
+          <button class="filter-btn" data-filter="Tech">Tech</button>
+          <button class="filter-btn" data-filter="Art">Art</button>
+          <button class="filter-btn" data-filter="Workshops">Workshops</button>
+          <button class="filter-btn" data-filter="Food">Food</button>
+          <button class="filter-btn" data-filter="Sports">Sports</button>
+        </div>
+        <span class="event-count" id="eventCount">0 events</span>
+      </div>
+
+      <div class="event-grid" id="eventGrid"></div>
+
+      <div class="empty-state" id="emptyState" hidden>
+        <span>🔎</span>
+        <h3>No events found</h3>
+        <p>Try another search or category.</p>
+        <button class="secondary-btn" id="resetFilters">Clear filters</button>
+      </div>
+    </section>
+
+    <!-- PROMO -->
+    <section class="promo-section">
+      <div class="promo-content">
+        <span class="promo-label">MAKE TIME FOR SOMETHING NEW</span>
+        <h2>Life is better<br>when you <span>experience more.</span></h2>
+        <p>Discover new interests, meet new people and create unforgettable moments.</p>
+        <a href="#events" class="promo-btn">Find Your Next Event →</a>
+      </div>
+      <div class="promo-art">
+        <div class="promo-circle circle-one">✦</div>
+        <div class="promo-circle circle-two">♫</div>
+        <div class="promo-circle circle-three">✧</div>
+        <div class="promo-ticket">
+          <span>YOUR NEXT ADVENTURE</span>
+          <strong>Let's<br>make<br>memories.</strong>
+          <small>EVENTORA ✦</small>
+        </div>
+      </div>
+    </section>
+
+    <!-- BOOKINGS -->
+    <section class="bookings-section" id="bookings">
+      <div class="section-heading">
+        <div>
+          <span class="section-label">YOUR EXPERIENCES</span>
+          <h2>My <span>bookings.</span></h2>
+          <p>Keep track of the events you've booked.</p>
+        </div>
+      </div>
+
+      <div class="booking-list" id="bookingList">
+        <div class="booking-empty">
+          <span>🎟️</span>
+          <h3>No bookings yet</h3>
+          <p>Your next adventure starts with an event.</p>
+          <a href="#events" class="primary-btn">Explore Events →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="footer-main">
+        <div class="footer-brand">
+          <a href="#" class="logo"><span class="logo-icon">✦</span> eventora<span class="logo-dot">.</span></a>
+          <p>Discover events. Explore interests. Make every moment memorable.</p>
+        </div>
+
+        <div class="footer-column">
+          <h4>Explore</h4>
+          <a href="#events">All Events</a>
+          <a href="#categories">Categories</a>
+          <a href="#bookings">My Bookings</a>
+        </div>
+
+        <div class="footer-column">
+          <h4>Eventora</h4>
+          <a href="#home">Home</a>
+          <a href="#events">Discover</a>
+          <a href="#bookings">Bookings</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 Eventora. All rights reserved.</span>
+        <span>Designed with ✦ for memorable moments.</span>
+      </div>
+    </footer>
+  </main>
+
+  <!-- EVENT DETAILS MODAL -->
+  <div class="modal" id="eventModal" aria-hidden="true">
+    <div class="modal-backdrop" data-close="eventModal"></div>
+    <div class="modal-box event-modal-box">
+      <button class="modal-close" data-close="eventModal" aria-label="Close">×</button>
+      <div id="eventModalContent"></div>
+    </div>
+  </div>
+
+  <!-- BOOKING MODAL -->
+  <div class="modal" id="bookingModal" aria-hidden="true">
+    <div class="modal-backdrop" data-close="bookingModal"></div>
+    <div class="modal-box booking-modal-box">
+      <button class="modal-close" data-close="bookingModal" aria-label="Close">×</button>
+      <span class="section-label">RESERVE YOUR SPOT</span>
+      <h2>Book your <span>tickets.</span></h2>
+      <p class="modal-subtitle" id="bookingEventName"></p>
+
+      <div class="booking-summary" id="bookingSummary"></div>
+
+      <form id="bookingForm">
+        
+        <label for="customerName">Your Name</label>
+        <input
+          type="text"
+          id="customerName"
+          placeholder="Enter your name"
+          required
+>
+
+        <label for="customerEmail">Email Address</label>
+        <input
+          type="email"
+          id="customerEmail"
+          placeholder="Enter your email"
+          required
+>
+
+        <label for="ticketQuantity">Number of tickets</label>
+        <select id="ticketQuantity">
+          <option value="1">1 Ticket</option>
+          <option value="2">2 Tickets</option>
+          <option value="3">3 Tickets</option>
+          <option value="4">4 Tickets</option>
+          <option value="5">5 Tickets</option>
+        </select>
+
+        <div class="price-summary">
+          <span>Total amount</span>
+          <strong id="bookingTotal">PKR 0</strong>
+        </div>
+
+        <button type="submit" class="primary-btn full-btn">Confirm Demo Booking →</button>
+      </form>
+
+      <p class="demo-disclaimer">Demo project only. No real payment or reservation is made.</p>
+    </div>
+  </div>
+
+  <!-- TOAST -->
+  <div class="toast" id="toast"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
